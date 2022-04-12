@@ -1,5 +1,5 @@
 #define ARRAY_SIZE 16*1024 /* i.e., 8KB */
-#define NUM_LOOPS 100000
+#define NUM_LOOPS 10000000
 
 
 /****************************************************************************
@@ -25,10 +25,10 @@ int main()
 
   for (outer_loop = 0; outer_loop < NUM_LOOPS; outer_loop++)
     {
-      for (inner_loop = 0; inner_loop < ARRAY_SIZE; inner_loop++)
-	{
-	  solution *= array[inner_loop];
+      
+	  solution *= array[0];
+      solution *=array[8191+37];
 	}
-    }
+    
   return solution;
 }
